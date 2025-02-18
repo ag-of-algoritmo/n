@@ -1,0 +1,2027 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    
+}
+
+body{
+   font-family: montserrat;
+   height: 100vh;
+   width: 100%;
+   position: relative;
+}
+
+nav {
+    background: #fff;
+    height: 115px;
+    width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; /* Agrega posición relativa */
+  }
+  
+  nav::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 20px; /* Alto fijo para la sombra */
+    background: transparent;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Aplica la sombra */
+    z-index: -1; /* Posiciona la sombra detrás de la barra de navegación */
+  }
+
+.enlace{
+    position: absolute;
+    padding: 15px 50px;
+}
+
+.logo{
+    height: 80px;
+}
+
+nav ul{
+    float: right;
+    margin-right: 20px; 
+}
+
+nav ul li{
+    display: inline-block;
+    line-height: 115px;
+    margin: 0 5px;
+}
+
+nav ul li a{
+    color: #000;
+    font-size: 17px;/*probar si queda mejor 20px, pero es que se mueve el logo tmb*/
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+li a.active,li a:hover{
+    background: #282828;
+    transition: .5s;
+    color: #fff;
+}
+
+.checkbtn{
+    font-size: 30px;
+    color: #000;
+    float: right;
+    line-height: 115px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}
+
+
+nav ul li .regresar-novelasonly{
+    background: #ffffff;
+    transition: .5s;
+    color: #282828;
+}
+
+nav ul li .regresar-novelasonly:hover{
+    background: #7c572b;
+    transition: .5s;
+    color: #edbc87;
+}
+
+nav ul li .regresar-ficciononly:hover{
+  background: #98810e;
+  transition: .5s;
+  color: #e9d780;
+}
+
+nav ul li .regresar-autobiografiaonly:hover{
+  background: #3f6db3;
+  transition: .5s;
+  color: #bcd7ff;
+}
+
+nav ul li .regresar-poemaonly:hover{
+  background: #9b2424;
+  transition: .5s;
+  color: #f3a5a5;
+}
+
+nav ul li .regresar-tragediaonly:hover{
+  background: #474849;
+  transition: .5s;
+  color: #c3c3c3;
+}
+
+.concho{
+  background:  url(../IMGS/librería2.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: calc(100vh - 80px);
+}
+
+.pantallaso{
+  /*background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));*/
+    background-size: cover;
+    background-position: center center;
+    height: calc(100vh - 80px);
+}
+
+
+.pantallaso .contenedor-pantallaso{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
+    text-align: center;
+    align-items: center;
+    color: #fff;
+}
+
+.pantallaso .contenedor-pantallaso h2{
+    font-size: 65px;
+    margin-top: 80px;
+}
+
+.pantallaso .contenedor-pantallaso p{
+    margin: 20px 0px;
+    font-weight: 100;
+    font-size: 25px;
+}
+
+.pantallaso .contenedor-pantallaso .boton-pantallaso a{
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 3px solid #fff;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.pantallaso .contenedor-pantallaso .boton-pantallaso a:hover{
+    border: 3px solid #474849;
+    background: #ffffff;
+    transition: .5s;
+    color: #282828;
+}
+
+.texto-antes-de-lo-que-sea{
+    background: #ffffff;
+    color: #282828;
+    /*decidir si usar la opción 1 o 2 al fin de al cabo*/
+    /* 1)
+    padding: 50px 0px;*/
+    /* 2) 
+    padding-top: 50px;
+    padding-bottom: 30px;*/
+    padding-top: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.texto-antes-de-lo-que-sea h2{
+    margin-bottom: 15px;
+    font-size: 45px;
+}
+
+.texto-antes-de-lo-que-sea p{
+    margin-bottom: 25px;
+    font-weight: 100;
+    font-size: 18px;
+}
+/*hacer todos los libros del inicio responsive*/
+.iniciodelibros {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    /**/padding-top: 0.10rem;
+    /**/margin-bottom: 5px;
+  }
+  
+  .iniciodelibros .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .iniciodelibros .container .box {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Agrega una posición relativa al .box */
+  }
+  
+  .iniciodelibros .container .box:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .iniciodelibros .container .box .discount {
+    background-color: #d7aa7986;
+    color: #100303;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .iniciodelibros .container .box .image {
+    width: 100%;
+    height: 300px;/*350px*/
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .iniciodelibros .container .box .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .iniciodelibros .container .box .nombrelibro {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .iniciodelibros .container .box .generolibro {
+    font-size: 25px;
+    color: #282828;
+    margin-bottom: 20px;
+    background-color: #ff000041;
+    text-align: center;
+  }
+  
+  .iniciodelibros .container .box button {
+    background-color: #d7aa79;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+  }
+
+  .iniciodelibros .container .box button a {
+    color: #fff;
+  }
+  
+  .iniciodelibros .container .box button:hover {
+    background-color: #ffc586;
+    color: #fff;
+  }
+
+  .texto-antes-de-lo-que-sea-catalogo{
+    background: #ffffff;
+    color: #282828;
+    /*decidir si usar la opción 1 o 2 al fin de al cabo*/
+    /* 1)
+    padding: 50px 0px;*/
+    /* 2) 
+    padding-top: 50px;
+    padding-bottom: 30px;*/
+    padding-top: 50px;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+.texto-antes-de-lo-que-sea-catalogo h2{
+    margin-bottom: 15px;
+    font-size: 45px;
+}
+
+.texto-antes-de-lo-que-sea-catalogo p{
+    font-weight: 100;
+    font-size: 18px;
+}
+
+.catalogotypes{
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    text-decoration: none;
+    color: #fff;
+    justify-content: center;
+    /*padding-top: 0.5rem;*/
+    margin-bottom: 20px;
+}
+
+.catalogotypes .container{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    align-items: center;
+}
+
+.catalogotypes .container .box1{
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #997141;
+    margin: 30px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.catalogotypes .container .box1 .categoriabtn1{
+    font-size: 26px;
+}
+
+.catalogotypes .container .box1 .categoriabtn1{
+    color: #000;
+}
+
+.catalogotypes .container .box1:hover{
+    border: 10px solid #7c572b;
+    background: #c69961e9;
+    transition: .5s;
+}
+
+.catalogotypes .container .box1 h3:hover{
+    color: #ffffff;
+}
+
+.catalogotypes .container .box2{
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #d1b839;
+    margin: 30px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.catalogotypes .container .box2 .categoriabtn2{
+    font-size: 26px;
+}
+
+.catalogotypes .container .box2 .categoriabtn2{
+    color: #000;
+}
+
+.catalogotypes .container .box2:hover{
+    border: 10px solid #b39813;
+    background: #e3ce61;
+    transition: .5s;
+}
+
+.catalogotypes .container .box2 h3:hover{
+    color: #ffffff;
+}
+
+.catalogotypes .container .box3{
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #7495c7;
+    margin: 30px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.catalogotypes .container .box3 .categoriabtn3{
+    font-size: 26px;
+}
+
+.catalogotypes .container .box3 .categoriabtn3{
+    color: #000;
+}
+
+.catalogotypes .container .box3:hover{
+    border: 10px solid #3b6bb4;
+    background: #89b0ea;
+    transition: .5s;
+}
+
+.catalogotypes .container .box3 h3:hover{
+    color: #ffffff;
+}
+
+.catalogotypes .container .box4{
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #dd5656;
+    margin: 30px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.catalogotypes .container .box4 .categoriabtn4{
+    font-size: 26px;
+}
+
+.catalogotypes .container .box4 .categoriabtn4{
+    color: #000;
+}
+
+.catalogotypes .container .box4:hover{
+    border: 10px solid #9b2424;
+    background: #e95555;
+    transition: .5s;
+}
+
+.catalogotypes .container .box4 h3:hover{
+    color: #ffffff;
+}
+
+.catalogotypes .container .box5{
+    cursor: pointer;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #747373;
+    margin: 30px;
+    padding: 30px;
+    cursor: pointer;
+}
+
+.catalogotypes .container .box5 .categoriabtn5{
+    font-size: 26px;
+}
+
+.catalogotypes .container .box5 .categoriabtn5{
+    color: #000;
+}
+
+.catalogotypes .container .box5:hover{
+    border: 10px solid #535556;
+    background: #a5a3a3;
+    transition: .5s;
+}
+
+.catalogotypes .container .box5 h3:hover{
+    color: #ffffff;
+}
+
+.catalogo_novela_intro {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    color: #000000;
+    justify-content: center;
+    padding-top: 0.5rem;  
+    margin-top: auto;
+}
+  
+  .catalogo_novela_intro .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;  }
+
+  .catalogo_novela_intro .container .box{
+    justify-content: center;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #997141;
+    margin: 30px;
+    padding: 30px;
+  }
+  
+  .catalogo_novela_intro .container .box h2{
+    font-size: 45px;
+  }
+
+  .catalogo_novela_intro .container .box p{
+    font-size: 18px;
+  }
+
+  .iniciodelibros {
+    background-color: #ffffff;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    /**/padding-top: 0.10rem;
+    /**/margin-bottom: 5px;
+  }
+  
+  .iniciodelibros .container {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1400px;
+    justify-content: center;
+    margin: 0 auto;
+  }
+  
+  .iniciodelibros .container .box-novelaonly {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    margin: 30px;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative; /* Agrega una posición relativa al .box */
+  }
+  
+  .iniciodelibros .container .box-novelaonly:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .iniciodelibros .container .box-novelaonly .discount {
+    background-color: #b1895e9a;
+    color: #100303;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-weight: bold;
+    z-index: 1;
+  }
+  
+  .iniciodelibros .container .box-novelaonly .image {
+    width: 100%;
+    height: 300px;/*350px*/
+    margin-bottom: 20px;
+    overflow: hidden;
+  }
+  
+  .iniciodelibros .container .box-novelaonly .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .iniciodelibros .container .box-novelaonly .nombrelibro {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .iniciodelibros .container .box-novelaonly .generolibro {
+    font-size: 25px;
+    color: #282828;
+    margin-bottom: 20px;
+    background-color: #9971419c;
+    text-align: center;
+  }
+  
+  .iniciodelibros .container .box-novelaonly button {
+    background-color: #7c572b;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+  }
+
+  .iniciodelibros .container .box-novelaonly button a {
+    color: #fff;
+  }
+  
+  .iniciodelibros .container .box-novelaonly button:hover {
+    background-color: #c28a45;
+    color: #fff;
+  }
+
+.detallesdellibro{
+    background-color: #ffffff;
+    box-sizing: border-box;
+    margin-top: 50px;/**/
+    display: block;
+    flex-wrap: wrap;
+
+    /**/margin-bottom: 50px;
+}
+
+.detallesdellibro .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .detallesdellibro .box1 {
+    width: 30%;
+}
+
+.detallesdellibro .box1 img{
+    /*width: 100%; ??*/
+    border-radius: 20px; /**/
+
+}
+
+/*-novelasonly*/
+  
+  .detallesdellibro .box2-novelasonly {
+    width: 70%;
+  }
+
+  .detallesdellibro .box2-novelasonly h2{
+    font-size: 45px;
+    margin-bottom: 15px;
+    color: #7c572b;
+  }
+
+  .detallesdellibro .box2-novelasonly h3{
+    font-size: 30px;
+    margin-bottom: 15px;
+    color: #553d20;
+  }
+
+  .detallesdellibro .box2-novelasonly h4{
+    font-size: 23px;
+    margin-bottom: 10px;
+  }
+
+  .detallesdellibro .box2-novelasonly h4 span{
+    font-size: 23px;
+    color: #8f6128;
+  }
+
+
+  .detallesdellibro .box2-novelasonly p{
+    font-size: 20px;
+    margin-right: 50px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+  }
+
+  .detallesdellibro .box2-novelasonly .descuento{
+    font-size: 20px;
+    margin-right: 50px;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    color: #a8783c;
+  }
+
+  .detallesdellibro .box2-novelasonly .preciopasado{
+    font-size: 25px;
+    text-decoration: line-through;
+    color: #9b9a9a;
+    margin-left: 10px;
+  }
+
+  .detallesdellibro .box2-novelasonly button{
+    background-color: #7c572b;
+    color: #fff;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+  }
+
+
+  .detallesdellibro .box2-novelasonly button:hover {
+    background-color: #c28a45;
+    color: #fff;
+  }
+
+
+
+
+  .catalogo_ficcion_intro {
+    background: #fff;
+    display: flex;
+    flex-wrap: wrap;
+    color: #000000;
+    justify-content: center;
+    padding-top: 0.5rem;  
+    margin-top: auto;
+}
+  
+  .catalogo_ficcion_intro .container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    text-align: center;  }
+
+  .catalogo_ficcion_intro .container .box{
+    justify-content: center;
+    position: relative;
+    background-color: #ffffff;
+    border: 5px solid #d1b839;
+    margin: 30px;
+    padding: 30px;
+  }
+  
+  .catalogo_ficcion_intro .container .box h2{
+    font-size: 45px;
+  }
+
+  .catalogo_ficcion_intro .container .box p{
+    font-size: 18px;
+  }
+
+/**/
+
+.iniciodelibros .container .box-ficciononly {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin: 30px;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative; /* Agrega una posición relativa al .box */
+}
+
+.iniciodelibros .container .box-ficciononly:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.iniciodelibros .container .box-ficciononly .discount {
+  background-color: #e2ca52b1;
+  color: #100303;
+  padding: 5px 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.iniciodelibros .container .box-ficciononly .image {
+  width: 100%;
+  height: 300px;/*350px*/
+  margin-bottom: 20px;
+  overflow: hidden;
+}
+
+.iniciodelibros .container .box-ficciononly .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.iniciodelibros .container .box-ficciononly .nombrelibro {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.iniciodelibros .container .box-ficciononly .generolibro {
+  font-size: 25px;
+  color: #282828;
+  margin-bottom: 20px;
+  background-color: #d7bb2db1;
+  text-align: center;
+}
+
+.iniciodelibros .container .box-ficciononly button {
+  background-color: #b39813;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+.iniciodelibros .container .box-ficciononly button a {
+  color: #fff;
+}
+
+.iniciodelibros .container .box-ficciononly button:hover {
+  background-color: rgb(217, 194, 78);
+  color: #fff;
+}
+
+.detallesdellibro .box2-ficciononly {
+  width: 70%;
+}
+
+.detallesdellibro .box2-ficciononly h2{
+  font-size: 45px;
+  margin-bottom: 15px;
+  color: #98810e;
+}
+
+.detallesdellibro .box2-ficciononly h3{
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #a08912;
+}
+
+.detallesdellibro .box2-ficciononly h4{
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+.detallesdellibro .box2-ficciononly h4 span{
+  font-size: 23px;
+  color: #bba11e;
+}
+
+
+.detallesdellibro .box2-ficciononly p{
+  font-size: 20px;
+  margin-right: 50px;
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+.detallesdellibro .box2-ficciononly .descuento{
+  font-size: 20px;
+  margin-right: 50px;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  color: #c9ab18;
+}
+
+.detallesdellibro .box2-ficciononly .preciopasado{
+  font-size: 25px;
+  text-decoration: line-through;
+  color: #9b9a9a;
+  margin-left: 10px;
+}
+
+.detallesdellibro .box2-ficciononly button{
+  background-color: #a08912;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+}
+
+
+.detallesdellibro .box2-ficciononly button:hover {
+  background-color: #d1b839;
+  color: #fff;
+}
+
+
+
+
+
+.catalogo_autobiografia_intro {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  color: #000000;
+  justify-content: center;
+  padding-top: 0.5rem;  
+  margin-top: auto;
+}
+
+.catalogo_autobiografia_intro .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  text-align: center;  }
+
+.catalogo_autobiografia_intro .container .box{
+  justify-content: center;
+  position: relative;
+  background-color: #ffffff;
+  border: 5px solid #7495c7;
+  margin: 30px;
+  padding: 30px;
+}
+
+.catalogo_autobiografia_intro .container .box h2{
+  font-size: 45px;
+}
+
+.catalogo_autobiografia_intro .container .box p{
+  font-size: 18px;
+}
+
+/**/
+
+.iniciodelibros .container .box-autobiografiaonly {
+background-color: #f7f7f7;
+border: 1px solid #ddd;
+border-radius: 10px;
+margin: 30px;
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+position: relative; /* Agrega una posición relativa al .box */
+}
+
+.iniciodelibros .container .box-autobiografiaonly:hover {
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.iniciodelibros .container .box-autobiografiaonly .discount {
+background-color: #79a7eb83;
+color: #100303;
+padding: 5px 10px;
+border-radius: 5px;
+position: absolute;
+top: 20px;
+left: 20px;
+font-weight: bold;
+z-index: 1;
+}
+
+.iniciodelibros .container .box-autobiografiaonly .image {
+width: 100%;
+height: 300px;/*350px*/
+margin-bottom: 20px;
+overflow: hidden;
+}
+
+.iniciodelibros .container .box-autobiografiaonly .image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.iniciodelibros .container .box-autobiografiaonly .nombrelibro {
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.iniciodelibros .container .box-autobiografiaonly .generolibro {
+font-size: 25px;
+color: #282828;
+margin-bottom: 20px;
+background-color: #618ccdc4;
+text-align: center;
+}
+
+.iniciodelibros .container .box-autobiografiaonly button {
+background-color: #335d9b;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+.iniciodelibros .container .box-autobiografiaonly button a {
+color: #fff;
+}
+
+.iniciodelibros .container .box-autobiografiaonly button:hover {
+background-color: #6498e6;/*#5283cd*/
+color: #fff;
+}
+
+.detallesdellibro .box2-autobiografiaonly {
+width: 70%;
+}
+
+.detallesdellibro .box2-autobiografiaonly h2{
+font-size: 45px;
+margin-bottom: 15px;
+color: #3b6bb4;
+}
+
+.detallesdellibro .box2-autobiografiaonly h3{
+font-size: 30px;
+margin-bottom: 15px;
+color: #2c5899;
+}
+
+.detallesdellibro .box2-autobiografiaonly h4{
+font-size: 23px;
+margin-bottom: 10px;
+}
+
+.detallesdellibro .box2-autobiografiaonly h4 span{
+font-size: 23px;
+color: #537cb8;
+}
+
+
+.detallesdellibro .box2-autobiografiaonly p{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 15px;
+margin-top: 5px;
+}
+
+.detallesdellibro .box2-autobiografiaonly .descuento{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 10px;
+margin-top: 5px;
+color: #7490b9;
+}
+
+.detallesdellibro .box2-autobiografiaonly .preciopasado{
+font-size: 25px;
+text-decoration: line-through;
+color: #9b9a9a;
+margin-left: 10px;
+}
+
+.detallesdellibro .box2-autobiografiaonly button{
+background-color: #2c5899;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+
+.detallesdellibro .box2-autobiografiaonly button:hover {
+background-color: #6498e6;
+color: #fff;
+}
+
+
+
+
+.catalogo_poema_intro {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  color: #000000;
+  justify-content: center;
+  padding-top: 0.5rem;  
+  margin-top: auto;
+}
+
+.catalogo_poema_intro .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  text-align: center;  }
+
+.catalogo_poema_intro .container .box{
+  justify-content: center;
+  position: relative;
+  background-color: #ffffff;
+  border: 5px solid #dd5656;
+  margin: 30px;
+  padding: 30px;
+}
+
+.catalogo_poema_intro .container .box h2{
+  font-size: 45px;
+}
+
+.catalogo_poema_intro .container .box p{
+  font-size: 18px;
+}
+
+/**/
+
+.iniciodelibros .container .box-poemaonly {
+background-color: #f7f7f7;
+border: 1px solid #ddd;
+border-radius: 10px;
+margin: 30px;
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+position: relative; /* Agrega una posición relativa al .box */
+}
+
+.iniciodelibros .container .box-poemaonly:hover {
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.iniciodelibros .container .box-poemaonly .discount {
+background-color: #ff414173;
+color: #100303;
+padding: 5px 10px;
+border-radius: 5px;
+position: absolute;
+top: 20px;
+left: 20px;
+font-weight: bold;
+z-index: 1;
+}
+
+.iniciodelibros .container .box-poemaonly .image {
+width: 100%;
+height: 300px;/*350px*/
+margin-bottom: 20px;
+overflow: hidden;
+}
+
+.iniciodelibros .container .box-poemaonly .image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.iniciodelibros .container .box-poemaonly .nombrelibro {
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.iniciodelibros .container .box-poemaonly .generolibro {
+font-size: 25px;
+color: #282828;
+margin-bottom: 20px;
+background-color: #e40b0b8f;
+text-align: center;
+}
+
+.iniciodelibros .container .box-poemaonly button {
+background-color: #9b2424;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+.iniciodelibros .container .box-poemaonly button a {
+color: #fff;
+}
+
+.iniciodelibros .container .box-poemaonly button:hover {
+background-color: #ef6c6c;
+color: #fff;
+}
+
+.detallesdellibro .box2-poemaonly {
+width: 70%;
+}
+
+.detallesdellibro .box2-poemaonly h2{
+font-size: 45px;
+margin-bottom: 15px;
+color: #b50e0e;
+}
+
+.detallesdellibro .box2-poemaonly h3{
+font-size: 30px;
+margin-bottom: 15px;
+color: #9c0b0b;
+}
+
+.detallesdellibro .box2-poemaonly h4{
+font-size: 23px;
+margin-bottom: 10px;
+}
+
+.detallesdellibro .box2-poemaonly h4 span{
+font-size: 23px;
+color: #e23c3c;
+}
+
+
+.detallesdellibro .box2-poemaonly p{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 15px;
+margin-top: 5px;
+}
+
+.detallesdellibro .box2-poemaonly .descuento{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 10px;
+margin-top: 5px;
+color: #e95555;
+}
+
+.detallesdellibro .box2-poemaonly .preciopasado{
+font-size: 25px;
+text-decoration: line-through;
+color: #9b9a9a;
+margin-left: 10px;
+}
+
+.detallesdellibro .box2-poemaonly button{
+background-color: #9c0b0b;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+
+.detallesdellibro .box2-poemaonly button:hover {
+background-color: #e15959;
+color: #fff;
+}
+
+
+
+.catalogo_tragedia_intro {
+  background: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  color: #000000;
+  justify-content: center;
+  padding-top: 0.5rem;  
+  margin-top: auto;
+}
+
+.catalogo_tragedia_intro .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  text-align: center;  }
+
+.catalogo_tragedia_intro .container .box{
+  justify-content: center;
+  position: relative;
+  background-color: #ffffff;
+  border: 5px solid #747373;
+  margin: 30px;
+  padding: 30px;
+}
+
+.catalogo_tragedia_intro .container .box h2{
+  font-size: 45px;
+}
+
+.catalogo_tragedia_intro .container .box p{
+  font-size: 18px;
+}
+
+/**/
+
+.iniciodelibros .container .box-tragediaonly {
+background-color: #f7f7f7;
+border: 1px solid #ddd;
+border-radius: 10px;
+margin: 30px;
+padding: 30px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+position: relative; /* Agrega una posición relativa al .box */
+}
+
+.iniciodelibros .container .box-tragediaonly:hover {
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.iniciodelibros .container .box-tragediaonly .discount {
+background-color: #a5a3a384;
+color: #100303;
+padding: 5px 10px;
+border-radius: 5px;
+position: absolute;
+top: 20px;
+left: 20px;
+font-weight: bold;
+z-index: 1;
+}
+
+.iniciodelibros .container .box-tragediaonly .image {
+width: 100%;
+height: 300px;/*350px*/
+margin-bottom: 20px;
+overflow: hidden;
+}
+
+.iniciodelibros .container .box-tragediaonly .image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.iniciodelibros .container .box-tragediaonly .nombrelibro {
+font-size: 22px;
+font-weight: bold;
+margin-bottom: 10px;
+text-align: center;
+}
+
+.iniciodelibros .container .box-tragediaonly .generolibro {
+font-size: 25px;
+color: #282828;
+margin-bottom: 20px;
+background-color: #9b9a9aa3;/*#9b9a9aa3*//*#9b9a9ab1*//*#9b9a9abc*/
+text-align: center;
+}
+
+.iniciodelibros .container .box-tragediaonly button {
+background-color: #535556;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+.iniciodelibros .container .box-tragediaonly button a {
+color: #fff;
+}
+
+.iniciodelibros .container .box-tragediaonly button:hover {
+background-color: #9b9b9b;
+color: #fff;
+}
+
+.detallesdellibro .box2-tragediaonly {
+width: 70%;
+}
+
+.detallesdellibro .box2-tragediaonly h2{
+font-size: 45px;
+margin-bottom: 15px;
+color: #535556;
+}
+
+.detallesdellibro .box2-tragediaonly h3{
+font-size: 30px;
+margin-bottom: 15px;
+color: #474849;
+}
+
+.detallesdellibro .box2-tragediaonly h4{
+font-size: 23px;
+margin-bottom: 10px;
+}
+
+.detallesdellibro .box2-tragediaonly h4 span{
+font-size: 23px;
+color: #777777;
+}
+
+
+.detallesdellibro .box2-tragediaonly p{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 15px;
+margin-top: 5px;
+}
+
+.detallesdellibro .box2-tragediaonly .descuento{
+font-size: 20px;
+margin-right: 50px;
+margin-bottom: 10px;
+margin-top: 5px;
+color: #767676;
+}
+
+.detallesdellibro .box2-tragediaonly .preciopasado{
+font-size: 25px;
+text-decoration: line-through;
+color: #9b9a9a;
+margin-left: 10px;
+}
+
+.detallesdellibro .box2-tragediaonly button{
+background-color: #535556;
+color: #fff;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+font-size: 18px;
+}
+
+
+.detallesdellibro .box2-tragediaonly button:hover {
+background-color: #9b9a9a;
+color: #fff;
+}
+
+
+
+
+
+
+
+.texto-antes-de-lo-que-sea-contacto{
+  background: #ffffff;
+  color: #282828;
+  /*decidir si usar la opción 1 o 2 al fin de al cabo*/
+  /* 1)
+  padding: 50px 0px;*/
+  /* 2) 
+  padding-top: 50px;
+  padding-bottom: 30px;*/
+  padding-top: 50px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.texto-antes-de-lo-que-sea-contacto h2{
+  margin-bottom: 15px;
+  font-size: 45px;
+}
+
+.texto-antes-de-lo-que-sea-contacto p{
+  font-weight: 100;
+  font-size: 18px;
+}
+
+.texto-antes-de-lo-que-sea-contacto h3{
+  margin-top: 5px;
+  font-size: 25px;
+}
+
+.texto-antes-de-lo-que-sea-contacto .boton-pantallaso{
+  margin-top: 5px;
+}
+
+.texto-antes-de-lo-que-sea-contacto .boton-pantallaso a{
+  display: inline-block;
+  text-decoration: none;
+  color: #282828;
+  border: 3px solid #282828;
+  padding: 12px 34px;
+  font-size: 20px;
+  background: transparent;
+  position: relative;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.texto-antes-de-lo-que-sea-contacto .boton-pantallaso a:hover{
+  border: 5px solid #474849;
+  background: #100303;
+  transition: .5s;
+  color: #fff;
+}
+
+.loquereemplazaelasteriscodelasecciondelcontacto{
+  scroll-behavior: smooth;
+}
+
+.loquereemplazaelcuerpodelasecciondelcontacto{
+  width: 100%;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #000;
+  background: #fff;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.contact-container{
+  max-width: 960px;
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: #efefef;
+  box-shadow: 0 0 1rem hsla(0 0 0 / 16%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.form-container{
+  padding: 20px;
+}
+
+.form-container h3{
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-form{
+  display: grid;
+  row-gap: 1rem;
+}
+
+.contact-form input, 
+.contact-form textarea{
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #fff;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #2c5899;
+  border-radius: 0.4rem; 
+}
+
+.contact-form textarea{
+  resize: none;
+  height: 200px;
+}
+
+.contact-form .submit-button{
+  border: none;
+  outline: none;
+  background: #474849;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #fff;
+}
+
+.contact-form .submit-button:hover{
+  background: #777777;
+  transition: 0.3s all linear;
+}
+
+.map iframe{
+  width: 100%;
+  height: 100%;
+} 
+
+
+
+.loquereemplazaelcuerpodeelregistro{
+  font-family: Poppins, sans-serif;
+  display: flex;
+  height: 85vh;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background: #fff; /*linear-gradient(135deg, #a823d0, #e1c110);*/
+  /*background: linear-gradient(135deg, #000000, #282828);*/
+}
+
+.loquereemplazaelcuerpodeelregistro .container-registro{
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px #00000074;/**/
+}
+
+.loquereemplazaelcuerpodeelregistro .container-registro .title-registro{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+  /*margin-bottom: 25px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #333;*/
+}
+
+.loquereemplazaelcuerpodeelregistro .container-registro .title-registro::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #000000, #686868);
+}
+
+.container-registro form .user-details-registro{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+form .user-details-registro .input-box-registro{
+  /*margin: 20px 0 12px 0;*/
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+
+.user-details-registro .input-box-registro .details-registro{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.user-details-registro .input-box-registro input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+/**/
+.user-details-registro .input-box-registro input:focus,
+.user-details-registro .input-box-registro input:valid{
+  border-color: #9b9a9a;
+}/**/
+
+.container-registro form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.container-registro form .gender-details .category{
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
+}
+
+.gender-details .category label{
+  display: flex;
+  align-items: center;
+}
+
+.gender-details .category .dot{
+  height: 18px;
+  width: 18px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two{
+  border-color: #d9d9d9;
+  background: #0066ff;
+}
+
+.container-registro form input[type="radio"]{
+  display: none;
+}
+
+.container-registro form .button-registro{
+  height: 45px;
+  margin: 35px 0;
+}
+
+.container-registro form .button-registro input{
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  /*cursor: pointer;
+  transition: all 0.3s ease;*/
+  background: linear-gradient(135deg, #000000, #686868);
+}
+
+.container-registro form .button-registro input:hover{
+  /*transform: scale(0.99);*/
+  background: linear-gradient(-135deg, #000000, #686868);
+}
+
+
+.pie-pagina{
+    width: 100%;
+    background-color: #000000;
+}
+
+.pie-pagina .grupo-1{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}/**/
+
+.pie-pagina .grupo-1 .box figure img{
+    width: 250px;
+}
+
+.pie-pagina .grupo-1 .box h2{
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 25px;
+}
+
+.pie-pagina .grupo-1 .box p{
+    color: #efefef;
+    margin-bottom: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+.pie-pagina .grupo-1 .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    margin-right: 10px;
+    background-color: #474849;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover{
+    color: #ffc586;    
+}
+
+.pie-pagina .grupo-2{
+    background-color: #282828;
+    padding: 15px 10px;
+    text-align: center;
+    color: #ffecd7;
+}
+
+.pie-pagina .grupo-2 small{
+    font-size: 15px;
+}
+
+
+
+@media (max-width: 1200px) {
+  /* Estilos para pantallas de hasta 1200px */
+  .detallesdellibro {
+    margin-top: 30px !important;
+    margin-bottom: 30px !important;
+  }
+
+  .detallesdellibro .container {
+    flex-direction: column;
+    
+  }
+
+  .detallesdellibro .box1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .detallesdellibro .box1 img {
+    width: 100%;
+  }
+
+/*-novelasonly*/
+
+  .detallesdellibro .box2-novelasonly {
+    width: 100%;
+    margin-left: 25px;
+  }
+
+  .detallesdellibro .box2-novelasonly h2 {
+    font-size: 35px;
+  }
+
+  .detallesdellibro .box2-novelasonly h3 {
+    font-size: 28px;
+  }
+
+  .detallesdellibro .box2-novelasonly h4 {
+    font-size: 22px;
+  }
+
+  .detallesdellibro .box2-novelasonly p {
+    font-size: 19px;
+  }
+
+  .detallesdellibro .box2-novelasonly .descuento {
+    font-size: 19px;
+  }
+
+  .detallesdellibro .box2-novelasonly .preciopasado {
+    font-size: 22px;
+  }
+
+  .detallesdellibro .box2-novelasonly button {
+    padding: 12px 25px;
+    font-size: 17px;
+  }
+
+
+
+  .loquereemplazaelasteriscodelasecciondelcontacto{
+    margin-top: 1.5rem !important;
+    margin-bottom: 3rem !important;
+  }
+}
+
+@media (max-width: 964px){
+  .contact-container{
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
+
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 20px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #282828;
+        top: 115px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+        color: #ffffff;
+    }
+    li a:hover, li a.active{
+        background: #ffffff;
+        color: #000000;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+
+@media (max-width: 820px) {
+    nav {
+      z-index: 1000; /* Establece un z-index alto para la barra de navegación en dispositivos móviles */
+      position: fixed; /* Establece la posición en fija para que la barra de navegación se mantenga en la parte superior de la pantalla */
+    }
+
+    .texto-antes-de-lo-que-sea-catalogo{
+        padding: 125px;
+        padding-bottom: 15px;
+        justify-content: center;
+    }
+
+    .catalogotypes .container{
+        justify-content: center;
+    }
+
+    .catalogo_novela_intro {
+        padding: 115px; /* igual a la altura del navbar */
+      }
+
+     .mearte {
+       padding-top: 115px;
+     } 
+
+      
+  }
+
+@media (max-width: 800px){
+    .pie-pagina .grupo-1{
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+} /*dudo si dejarlo ahi o quitarlo :/ */
+
+@media (max-width: 768px) {
+  /* Estilos para dispositivos móviles */
+  .detallesdellibro {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .detallesdellibro .container {
+    flex-direction: column;
+  }
+
+  .detallesdellibro .box1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .detallesdellibro .box2-novelasonly {
+    width: 100%;
+  }
+
+  .detallesdellibro .box2-novelasonly h2 {
+    font-size: 30px;
+  }
+
+  .detallesdellibro .box2-novelasonly h3 {
+    font-size: 25px;
+  }
+
+  .detallesdellibro .box2-novelasonly h4 {
+    font-size: 20px;
+  }
+
+  .detallesdellibro .box2-novelasonly p {
+    font-size: 18px;
+  }
+
+  .detallesdellibro .box2-novelasonly .descuento {
+    font-size: 18px;
+  }
+
+  .detallesdellibro .box2-novelasonly .preciopasado {
+    font-size: 20px;
+  }
+
+  .detallesdellibro .box2-novelasonly button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 767px) {
+    nav {
+      z-index: 1000; /* Establece un z-index alto para la barra de navegación en dispositivos móviles */
+      position: fixed; /* Establece la posición en fija para que la barra de navegación se mantenga en la parte superior de la pantalla */
+    }
+  }
+  
+  @media (max-width: 700px){
+
+    .mearte {
+      padding-top: 115px;
+    } 
+
+    .loquereemplazaelasteriscodelasecciondelcontacto{
+      margin-top: 5rem !important;
+      margin-bottom: 27rem !important;
+    }
+
+    .contact-container{
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 20rem !important;
+    }
+
+    .map iframe{
+      height: 400px;
+    }
+
+   
+  }
+
+@media (max-width: 584px){
+
+  .loquereemplazaelcuerpodeelregistro{
+    height: 100vh;
+
+  .container-registro{
+    max-width: 100%;
+  }
+
+  form .user-details-registro .input-box-registro{
+    /*margin: 20px 0 12px 0;*/
+    margin-bottom: 15px;
+    width: 100%;
+  }
+
+  .container-registro form .gender-details .category{
+    width: 100%;
+  }
+
+  .container-registro form .user-details-registro{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .user-details-registro::-webkit-scrollbar{
+    width: 0;
+  }
+
+}
+
+}
